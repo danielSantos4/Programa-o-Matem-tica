@@ -82,12 +82,13 @@ pip install gurobipy
 ### ▶️ Executando o Código
 #### 📌 Solução com Gurobi:
 ```bash
-python problema_gurobi.py
+python gurobi.py caminho_do_arquivo
 ```
 
 #### 📌 Solução com GRASP:
 ```bash
-python problema_grasp.py
+python problema_grasp.py caminho_do_arquivo fator_aleatoriedade numero_de_iteracoes
+
 ```
 
 ---
