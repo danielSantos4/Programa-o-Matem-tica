@@ -8,12 +8,12 @@ Um grande aeroporto brasileiro recebeu uma rodada de investimentos privados e pr
 
 Diariamente, um conjunto de **n** aviões pousa nesse aeroporto. Cada avião **i** possui as seguintes informações:
 
-- **R_i**: Tempo de sua detecção pelo radar;
-- **E_i**: Tempo inicial de pouso;
-- **T_i**: Tempo ideal para o pouso;
-- **L_i**: Tempo final que o avião **i** pode pousar;
-- **g_i**: Penalidade por unidade de tempo se o avião **i** pousar antes do tempo ideal;
-- **h_i**: Penalidade por unidade de tempo se o avião **i** pousar depois do tempo ideal.
+- **$R_i$**: Tempo de sua detecção pelo radar;
+- **$E_i$**: Tempo inicial de pouso;
+- **$T_i$**: Tempo ideal para o pouso;
+- **$L_i$**: Tempo final que o avião **i** pode pousar;
+- **$g_i$**: Penalidade por unidade de tempo se o avião **i** pousar antes do tempo ideal;
+- **$h_i$**: Penalidade por unidade de tempo se o avião **i** pousar depois do tempo ideal.
 
 Considere uma matriz **S = $[s_{ij}]$** com valores **$s_{ij}$**, onde **i, j = 1, ..., n**, representando o tempo de separação requerido após o pouso do avião **i** e antes do pouso do próximo avião **j**. 
 
