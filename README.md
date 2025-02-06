@@ -22,6 +22,47 @@ A gerência de operações do aeroporto deseja determinar a sequência de aterri
 Como critério de qualidade, pretende-se minimizar as penalidades em relação ao espaço de tempo em que cada avião **i** pousou antes ou depois do tempo ideal para pouso.
 
 
+## 🛠️ Modelagem Matemática
+
+O problema é modelado como um problema de **Programação Linear Inteira Mista (MILP)**, com as seguintes variáveis de decisão:
+
+- **$t_i$**: Tempo de pouso do avião **i** (variável contínua);
+- **$x_{ij}$**: Variável binária que indica se o avião **i** pousa antes do avião **j**.
+
+### 🎯 Função Objetivo
+Minimizar as penalidades totais associadas a pousos antecipados ou atrasados:
+
+```math
+Z = \sum_{i=1}^{n} \left( g_i \cdot d_i + h_i \cdot a_i \right)
+```
+
+Onde:
+- **$d_i = max(0, T_i - t_i)$** representa o tempo que um avião pousa antes do ideal;
+- **$a_i = max(0, t_i - T_i)$** representa o tempo que um avião pousa depois do ideal.
+
+### ✅ Restrições
+
+1. **Tempo de pouso dentro da janela permitida:**
+   ```math
+   E_i \leq t_i \leq L_i, \forall i = 1, \dots, n
+   ```
+
+2. **Tempo de separação entre aviões:**
+   ```math
+   t_j \geq t_i + s_{ij} - M \cdot (1 - x_{ij}), \forall i, j = 1, \dots, n, i \neq j
+   ```
+
+3. **Restrição de ordem:**
+   ```math
+   x_{ij} + x_{ji} = 1, \forall i, j = 1, \dots, n, i \neq j
+   ```
+
+4. **Linearização das penalidades:**
+   ```math
+   d_i \geq T_i - t_i, \quad a_i \geq t_i - T_i, \quad d_i \geq 0, \quad a_i \geq 0
+   ```
+
+
 ## 🚀 Implementação
 
 Este repositório contém duas abordagens para resolver o problema:
